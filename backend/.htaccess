@@ -1,0 +1,14 @@
+RewriteEngine ON
+RewriteBase /
+
+# Allow access to public/storage (symlinked to storage/app/public)
+RewriteCond %{REQUEST_URI} ^/storage/
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*)$ storage/$1 [L]
+
+# Si le fichier ou le répertoire existe, ne pas rediriger
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rediriger toutes les autres requêtes vers public/index.php
+RewriteRule ^(.*)$ public/index.php [QSA,L]
