@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "./Layout/Layout"
-import Error from "./pages/Error";
+import Layout from "./Layout/Layout.jsx"
+import Error from "./pages/Error.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
