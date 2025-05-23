@@ -1,19 +1,20 @@
+import React from "react";
 import Layout from "./Layout/Layout"
-import Error from "./pages/Error/Error";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Error from "./pages/Error";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 const AppRouter = () => {
   return (
-      <div>
-        <Router>
+      <>
+        <BrowserRouter>
           <Routes>
-            <Route path="/" element={}>
+            <Route path="/" element={<Layout />}>
               <Route path="*" element={<Error />} />
             </Route>
           </Routes>
-        </Router>
-      </div>
+        </BrowserRouter>
+      </>
   );
 };
 
