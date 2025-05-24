@@ -4,7 +4,7 @@ const Header = () => {
     const [menuToggle, setMenuToggle] = useState(false)
 
     return (
-        <header className="relative px-8 md:px-12 lg:px-32 flex justify-between items-center w-full pt-4 capitalize">
+        <header className="relative px-8 md:px-12 lg:px-32 flex justify-between items-center w-full py-4 capitalize">
             <div className="flex items-center">
                 <img src="/logo.png" alt="Pizzaria logo" className="size-10 md:mr-4"/>
                 <h1 className="text-lg md:text-2xl font-bold">Resto app</h1>
@@ -16,7 +16,7 @@ const Header = () => {
                     <li><a href="/contact">contact</a></li>
                 </ul>
             </div>
-            <a href="/login" className="mx-8     bg-[#F54748] text-white max-sm:hidden sm:flex justify-center gap-2 items-center py-2 px-4 rounded-full text-lg font-normal"><i className="fa-solid fa-right-from-bracket"></i><span>login</span></a>
+            <a href="/login" className="mx-8 bg-[#F54748] text-white max-sm:hidden sm:flex justify-center gap-2 items-center py-2 px-4 rounded-full text-lg font-normal"><i className="fa-solid fa-right-from-bracket"></i><span>login</span></a>
             <div className="sm:hidden" onClick={() => setMenuToggle(!menuToggle)}>
                 <i className={`fa-solid ${menuToggle ? 'fa-xmark' : 'fa-bars'} text-3xl`}></i>
                 <div className={`${menuToggle ? 'flex' : 'hidden'} absolute top-0 left-0 w-screen h-screen bg-[#00000099] flex items-center justify-center`}>
