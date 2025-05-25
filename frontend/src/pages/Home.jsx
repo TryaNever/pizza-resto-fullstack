@@ -1,7 +1,9 @@
-import React from 'react';
+import React , {useEffect, useState} from 'react';
 import CardAdvantage from "../components/CardAdvantage.jsx";
+import LoadHomeData from "../components/LoadHomeData.jsx";
 
 const Home = () => {
+
 
     return (
         <main className="flex flex-col mb-10">
@@ -23,6 +25,9 @@ const Home = () => {
                     <CardAdvantage img="delivery2" title="Quickest Delivery" p="Consistently Timely Delivery, Even Faster" alt="Delivery man on a scooter"/>
                     <CardAdvantage img="delivery3" title="Superior Quality" p="For us, quality is paramount, not just speed" alt="man with a package and a scooter next to"/>
                 </div>
+            </div>
+            <div>
+                <LoadHomeData />
             </div>
         </main>
     );
