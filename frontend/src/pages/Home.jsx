@@ -3,7 +3,7 @@ import CardAdvantage from "../components/CardAdvantage.jsx";
 import LoadHomeData from "../components/LoadHomeData.jsx";
 
 const Home = () => {
-
+    document.title = "Pizza App | Home"
 
     return (
         <main className="flex flex-col mb-10">

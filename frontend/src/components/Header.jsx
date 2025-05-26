@@ -16,9 +16,9 @@ const Header = () => {
                     <li><a href="/contact">contact</a></li>
                 </ul>
             </div>
-            <a href="/login" className="mx-8 bg-[#F54748] text-white max-sm:hidden sm:flex justify-center gap-2 items-center py-2 px-4 rounded-full text-lg font-normal"><i className="fa-solid fa-right-from-bracket"></i><span>login</span></a>
+            <a href="/login" className="mx-8 bg-[#F54748] text-white max-sm:hidden sm:flex justify-center gap-2 items-center py-2 px-4 rounded-full text-lg font-normal"><i className="ri-door-open-fill"></i><span>login</span></a>
             <div className="sm:hidden" onClick={() => setMenuToggle(!menuToggle)}>
-                <i className={`fa-solid ${menuToggle ? 'fa-xmark' : 'fa-bars'} text-3xl`}></i>
+                <i className={`${menuToggle ? 'ri-close-large-line' : 'ri-menu-line'} text-3xl`}></i>
                 <div className={`${menuToggle ? 'flex' : 'hidden'} absolute top-0 left-0 w-screen h-screen bg-[#00000099] flex items-center justify-center`}>
                     <nav className="bg-white w-1/2 h-1/2 rounded-2xl p-5 flex justify-center overflow-hidden" onClick={(e) => e.stopPropagation()}>
                         <ul className="flex flex-col items-center justify-center space-y-6 w-52 md:w-64 text-base md:text-lg font-semibold">

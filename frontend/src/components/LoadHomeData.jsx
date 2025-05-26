@@ -16,7 +16,7 @@ export default function LoadHomeData() {
                 }
 
                 const data = await response.json();
-                setData(data);
+                setData(data.categories);
             }
             catch (error) {
                 setError(error.constructor || "Error");
@@ -26,4 +26,22 @@ export default function LoadHomeData() {
         }
         fetchData();
     },[])
+
+    const allProduct = data.flatMap((category) => category.produits || [])
+    return (
+        <div>
+            {data.map((item, index) => (
+                <div data-id={index} key={index}>{item.name}</div>
+            ))}
+            {allProduct.slice(0,3).map((item, index) => (
+                <div key={index}>
+                    <i></i>
+                    <div><i></i></div>
+                    <img src="" alt=""/>
+                    <div></div>
+                </div>
+            ))}
+        </div>
+
+    )
 }
