@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import StarsRating from "./StarsRating.jsx";
+import CardProduct from "./CardProduct.jsx";
 
 export default function LoadHomeData() {
     const [data, setData] = useState([]);
@@ -35,16 +36,7 @@ export default function LoadHomeData() {
             </div>
             <div>
                 {allProduct.slice(0, 3).map((item, index) => (
-                    <div key={index}>
-                        <i className="ri-heart-line"></i>
-                        <div><i className="ri-shopping-cart-2-line"></i></div>
-                        <img src={item.image} alt={item.description}/>
-                        <div>
-                            <h3></h3>
-                            <strong></strong>
-                            <StarsRating rating='80' />
-                        </div>
-                    </div>
+                    <CardProduct key={index} item={item} />
                 ))}
             </div>
         </div>
