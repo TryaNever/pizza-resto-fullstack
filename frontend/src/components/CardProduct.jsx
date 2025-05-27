@@ -7,7 +7,7 @@ const CardProduct = (item,key) => {
         <div key={key}>
             <i className="ri-heart-line"></i>
             <div><i className="ri-shopping-cart-2-line"></i></div>
-            <img src="../../public/exemple_product.jpg" alt={item.description}/>
+            <img src={`http://127.0.0.1:8000/storage/product/${item.image}`} alt={item.description}/>
             <div>
                 <h3>{item.name}</h3>
                 <strong>$ <span>{item.price}</span></strong>

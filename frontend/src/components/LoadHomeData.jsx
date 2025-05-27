@@ -42,7 +42,7 @@ export default function LoadHomeData() {
                 ))}
             </div>
             <div className="contain-product">
-                {products.map((item, index) => (
+                {products.slice(0,3).map((item, index) => (
                     <CardProduct key={index} item={item} />
                 ))}
             </div>

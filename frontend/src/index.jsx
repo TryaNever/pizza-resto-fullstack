@@ -5,10 +5,11 @@ import './index.css';
 import 'remixicon/fonts/remixicon.css';
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <StrictMode>
         <AppRouter />
     </StrictMode>
 );
+
+export default urlStorage;

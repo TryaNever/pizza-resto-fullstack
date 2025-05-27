@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import urlStorage from "../index.jsx";
 
 const Header = () => {
     const [menuToggle, setMenuToggle] = useState(false)
@@ -6,7 +7,7 @@ const Header = () => {
     return (
         <header className="relative px-8 md:px-12 lg:px-32 flex justify-between items-center w-full py-4 capitalize">
             <div className="flex items-center">
-                <img src="/logo.png" alt="Pizzaria logo" className="size-10 md:mr-4"/>
+                <img src="http://127.0.0.1:8000/storage/logo.png" alt="Pizzaria logo" className="size-10 md:mr-4"/>
                 <h1 className="text-lg md:text-2xl font-bold">Resto app</h1>
             </div>
             <div className="max-sm:hidden sm:flex">
