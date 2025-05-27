@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react";
-import StarsRating from "./StarsRating.jsx";
 import CardProduct from "./CardProduct.jsx";
 
 export default function LoadHomeData() {
     const [data, setData] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [category, setCategory] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -17,6 +18,8 @@ export default function LoadHomeData() {
 
                 const data = await response.json();
                 setData(data.categories);
+                setProducts(data.categories.flatMap((category) => category.produits || []))
+                setCategory(data.categories)
             } catch (error) {
                 setError(error.constructor || "Error");
             } finally {
@@ -26,16 +29,20 @@ export default function LoadHomeData() {
         fetchData();
     }, [])
 
-    const allProduct = data.flatMap((category) => category.produits || [])
+    function setProduct(products) {
+        const sortCategorie = data.find((item) => item.id === products)
+        setProducts(sortCategorie.produits)
+    }
+
     return (
         <div>
             <div>
-                {data.map((item, index) => (
-                    <div data-id={index} key={index}>{item.name}</div>
+                {category.map((item, index) => (
+                    <div data-id={index} key={index} onClick={() => setProduct(item.id)}>{item.name}</div>
                 ))}
             </div>
-            <div>
-                {allProduct.slice(0, 3).map((item, index) => (
+            <div className="contain-product">
+                {products.map((item, index) => (
                     <CardProduct key={index} item={item} />
                 ))}
             </div>

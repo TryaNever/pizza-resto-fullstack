@@ -3,7 +3,6 @@ import StarsRating from "./StarsRating.jsx";
 
 const CardProduct = (item,key) => {
     item = item.item
-    console.log(item);
     return (
         <div key={key}>
             <i className="ri-heart-line"></i>
