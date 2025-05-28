@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "./Layout/Layout.jsx"
 import Error from "./pages/Error.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from "./pages/Home.jsx";
 
 
 const AppRouter = () => {
@@ -10,7 +11,8 @@ const AppRouter = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route path="*" element={<Error />} />
+                <Route path="/" element={<Home />} />
+                <Route path="*" element={<Error />} />
             </Route>
           </Routes>
         </BrowserRouter>
