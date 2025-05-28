@@ -12,4 +12,3 @@ root.render(
     </StrictMode>
 );
 
-export default urlStorage;

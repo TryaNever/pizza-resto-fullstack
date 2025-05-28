@@ -27,6 +27,10 @@ const Home = () => {
                 </div>
             </div>
             <div>
+                <div className="text-center my-24">
+                    <p className="text-[#F54748] text-sm md:text-lg font-bold uppercase tracking-[20%]">Our Selection</p>
+                    <h2 className="text-xl md:text-5xl font-bold">A Menu That Will Always Capture Your Heart</h2>
+                </div>
                 <LoadHomeData />
             </div>
         </main>
