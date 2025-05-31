@@ -16,14 +16,12 @@ export default function LoadHomeData() {
                 if (!response.ok) {
                     throw new Error(response.statusText);
                 }
-
                 const data = await response.json();
+                console.log(data)
                 setData(data.categories);
                 setProducts(data.categories.flatMap((category) => category.produits || []))
                 setCategory(data.categories)
-            } catch (error) {
-                setError(error.constructor || "Error");
-            } finally {
+            }  finally {
                 setLoading(false);
             }
         }
@@ -31,6 +29,7 @@ export default function LoadHomeData() {
     }, [])
 
     function setProduct(products) {
+        console.log(data)
         const sortCategorie = data.find((item) => item.id === products)
         setProducts(sortCategorie.produits)
         setSelectCategorie(products)
@@ -38,6 +37,7 @@ export default function LoadHomeData() {
 
     return (
         <>
+            {error}
             <div className="w-full flex flex-wrap justify-center gap-4 px-4 sm:px-6 lg:px-24">
                 {category.map((item, index) => {
                     const isSelected = selectCategory === item.id;
@@ -46,14 +46,18 @@ export default function LoadHomeData() {
                             <img className="h-8 sm:h-10 lg:h-12 rounded-full" src={`http://127.0.0.1:8000/storage/category/${item.img[0].image_url}`} alt={item.description}/>
                             <p className="text-sm sm:text-base font-medium">{item.name}</p>
                         </div>
+
                     );
                 })}
             </div>
 
-            <div className="contain-product">
+            <div className="w-full flex flex-wrap items-center justify-center max-lg:flex-col lg:flex-row gap-8 px-20 md:px-40  lg:px-0 mt-10">
                 {products.slice(0,3).map((item, index) => (
                     <CardProduct key={index} item={item} />
                 ))}
+                <div className="h-full flex items-center justify-center w-1/8">
+                    <i className="ri-arrow-right-long-line text-6xl rounded-xl"></i>
+                </div>
             </div>
         </>
 
